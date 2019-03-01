@@ -51,9 +51,9 @@ on top of this we found the following performance metrix that we started using t
 |Metrics|
 |:-----:|
 |acc:  0.755|
-|pres:  0.6741225051617343|
-|recall:  0.6591520861372813|
-|oob:  0.751625|
+|pres:  0.674|
+|recall:  0.659|
+|oob:  0.751|
 and the confusion matrix:
 
 ![alt text](images/confusion.png)
@@ -63,6 +63,18 @@ What these values show is that our first model predicts better than random guess
 Our last step in random forest was to fine tune our model to see if we could produce better results. As such we ran a for loop iterating through multiple max features to find what we should set this to be in our final model. After our test of this we found that only using one feature produced the hightest acuracy which couldn't be right. After talking it over and getting some help we tested the same code with multiple random states to see how noise effects the acuracy.
 ![alt text](images/acc_v_feats.png)
 as you can see there flutuations depending on the random state that is used but, it seems to be that using 8 features tends to produce the highest acuracy even though there is very little difference between the models.
+
+after running this model on the test data we got the following results
+|Metrics|
+|:-----:|
+|acc:  0.733|
+|pres:  0.661|
+|recall:  0.602|
+|oob:  0.751|
+and the confusion matrix
+![alt text](images/confusion2.png)
+
+these values show that our model does perform sligtly worse on the test data as expected but it does perform very well for the amount of data we have.
 
 ## Roc Curve
 

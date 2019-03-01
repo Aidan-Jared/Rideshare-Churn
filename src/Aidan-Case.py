@@ -54,16 +54,29 @@ if __name__ == "__main__":
     sns.heatmap(matrix, annot=True)
     plt.show()
 
-    num_tree = [1,2,3,4,5,6,7,8,9]
-    randstate = [1,2,3]
-    for j in randstate:
-        acc = []
-        for i in num_tree:
-            rf = RandomForestClassifier(n_estimators=100,random_state=j,max_features=i)
-            rf.fit(X_train, y_train)
-            y_pred = rf.predict(X_test)
-            acc.append(np.mean(y_test == y_pred))
-        plt.plot(num_tree, acc)
-    plt.xlabel('features')
-    plt.ylabel('accuracy')
+    # num_tree = [1,2,3,4,5,6,7,8,9]
+    # randstate = [1,2,3]
+    # for j in randstate:
+    #     acc = []
+    #     for i in num_tree:
+    #         rf = RandomForestClassifier(n_estimators=100,random_state=j,max_features=i)
+    #         rf.fit(X_train, y_train)
+    #         y_pred = rf.predict(X_test)
+    #         acc.append(np.mean(y_test == y_pred))
+    #     plt.plot(num_tree, acc)
+    # plt.xlabel('features')
+    # plt.ylabel('accuracy')
+    # plt.show()
+
+    y_pred = rf.predict(X_test)
+
+    #confusionMatrix
+    acc, matrix, pres, recall, oob_score = confusionMatrix(rf, y_test, y_pred)
+    print('acc: ', acc)
+    print('confusion Matrix: ', matrix)
+    print('pres: ', pres)
+    print('recall: ', recall)
+    print('oob: ', oob_score)
+
+    sns.heatmap(matrix, annot=True)
     plt.show()
