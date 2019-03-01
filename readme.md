@@ -4,7 +4,7 @@ Today we are going to use all the skills we have learned to tackle a real
 problem in industry. The problem is churn prediction with a ride-sharing
 company in San Francisco.  Since the data is sourced from a real company, we
 ask you not to share the dataset. See more about the problem in
-[group.md](group.md). 
+[group.md](group.md).
 
 # Rideshare Churn
 ### Aidan Jared, Derek Lorenzen, Nathan James
@@ -13,7 +13,7 @@ ask you not to share the dataset. See more about the problem in
 As any good data scientist we first did some EDA to understand the data structure and what the featers are. Thankfully the [included markdown](group.md) explained the data which speed up the EDA. The data set was made up of 11 features and the point at which and individual churned was if they had not used the rideshare for more than 30 days. With this information we moved onto the data cleaning.
 
 ## Cleaning
-For the cleaning our first dessision was to remove the surge_pct feature because there was also a surge_avg column and we felt that including both features would have produced multicolinarity in the model which is never desired. After this dessision we developed a cleaning function in order to clean both the training and testing data the same way. 
+For the cleaning our first dessision was to remove the surge_pct feature because there was also a surge_avg column and we felt that including both features would have produced multicolinarity in the model which is never desired. After this dessision we developed a cleaning function in order to clean both the training and testing data the same way.
 ```python
 def clean(df, drop_list):
     df_ = df.drop(drop_list, axis=1)
@@ -48,6 +48,7 @@ We set the number of estimators to be 100 and left the max number of features to
 ![alt text](images/random_forest_feature_imp.png)
 
 on top of this we found the following performance metrix that we started using to tune our model
+
 |Metrics|
 |:-----:|
 |acc:  0.755|
@@ -65,6 +66,7 @@ Our last step in random forest was to fine tune our model to see if we could pro
 as you can see there flutuations depending on the random state that is used but, it seems to be that using 8 features tends to produce the highest acuracy even though there is very little difference between the models.
 
 after running this model on the test data we got the following results
+
 |Metrics|
 |:-----:|
 |acc:  0.733|
@@ -77,6 +79,9 @@ and the confusion matrix
 these values show that our model does perform sligtly worse on the test data as expected but it does perform very well for the amount of data we have.
 
 ## Roc Curve
+
+
+![roc_rf](images/rf_roc.png)
 
 ## Boosting
 
