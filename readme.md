@@ -72,8 +72,73 @@ these values show that our model does perform sligtly worse on the test data as 
 
 ## Gradient Boosting
 
+The Gradient Boosting Algorithm Performed slightly better than our Random Forest.
+
+The default valued version resulted in:
+
+### Confusion Matrix:   
+
+ |Positive_a | Negative_a
+ ---|---|---
+True_p | 1987 |  705  
+False_p | 985 | 4323  
+
+> Accuracy:  0.789  
+> Precision:  0.738  
+> Recall:  0.669  
+> AUC:  0.764  
+
+Notable default values:
+* N_Estimators = 100
+* Learning Rate = 0.1
+
+![alt text](images/model1.png)
+
+To optimize, we iterated through various collections of:
+* N_Estimators, Ideal = 220
+* Learning Rate, Ideal = 0.2
+
+#### Confusion Matrix:    
+
+|Positive_a | Negative_a
+---|---|---
+True_p | 1995 |  684  
+False_p | 977 | 4344
+
+> Accuracy:  0.792  
+Precision:  0.745  
+Recall:  0.671  
+AUC:  0.768
+
+![alt text](images/model2.png)
+
+### Changes between models:
+
+> Accuracy Delta:  0.00362  
+Precision Delta:  0.00656  
+Recall Delta:  0.00269  
+AUC Delta:  0.00343  
+
+### Feature Importances   
+
+#### Gradient Boosting
+![alt text](images/modelFeature.png)
+#### Random Forest
+![alt text](images/random_forest_feature_imp.png)
+
+Notes:
+
+From this, we infer that the driver rating of the passenger was a highly important feature to include.
+Further, city (categorical) and phone OS (categorical) were also important but we cannot act on magnitude or direction like with a coefficient.
+
+Within SKLearn:
+* To determine quality of split, friedman_mse is utilized as the default metric.
+* Fit on negative gradient of previous split, minimizing deviance
+
+
+
 ## Roc Curve
-The receiver operating characteristic is similar between cross-validation folds and between models. The dataset is relatively large so the small variance between the tests makes sense and the model is
+The receiver operating characteristic is similar between cross-validation folds and between models. The dataset is relatively large so the small variance between the tests makes sense as the models have plenty of data to train on.
 
 ![roc_rf](images/rf_roc.png)
 
@@ -81,7 +146,9 @@ The receiver operating characteristic is similar between cross-validation folds 
 
 
 ## Conclusion
-The Random Forest and Gradient Boosting models performed similarly.
+The Random Forest and Gradient Boosting models performed similarly. The models perform better than random guessing and do a decent job of predicting churn. We wanting to do some more tuning with gradient boosting to see if the model could be improved. The next step would be doing a grid search to find the best hyperparameters for the model. It is interesting that the gradient boosting model did slightly better without much tuning.
+
+The feature importances were different between the models. Further analysis using partial dependence plots to identify the effect each feature had would be another further step to investigate.
 
 
 
