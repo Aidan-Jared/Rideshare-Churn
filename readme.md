@@ -1,11 +1,3 @@
-## Case Study
-
-Today we are going to use all the skills we have learned to tackle a real
-problem in industry. The problem is churn prediction with a ride-sharing
-company in San Francisco.  Since the data is sourced from a real company, we
-ask you not to share the dataset. See more about the problem in
-[group.md](group.md).
-
 # Rideshare Churn
 ### Aidan Jared, Derek Lorenzen, Nathan James
 
@@ -78,11 +70,27 @@ and the confusion matrix
 
 these values show that our model does perform sligtly worse on the test data as expected but it does perform very well for the amount of data we have.
 
-## Roc Curve
+## Gradient Boosting
 
+## Roc Curve
+The receiver operating characteristic is similar between cross-validation folds and between models. The dataset is relatively large so the small variance between the tests makes sense and the model is
 
 ![roc_rf](images/rf_roc.png)
 
-## Boosting
+![roc_gb](images/gb_roc.png)
+
 
 ## Conclusion
+The Random Forest and Gradient Boosting models performed similarly.
+
+
+
+
+
+## Case Study
+
+Today we are going to use all the skills we have learned to tackle a real
+problem in industry. The problem is churn prediction with a ride-sharing
+company in San Francisco.  Since the data is sourced from a real company, we
+ask you not to share the dataset. See more about the problem in
+[group.md](group.md).
