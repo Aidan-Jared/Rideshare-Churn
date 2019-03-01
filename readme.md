@@ -7,6 +7,8 @@ As any good data scientist we first did some EDA to understand the data structur
 ## Cleaning
 For the cleaning our first dessision was to remove the surge_pct feature because there was also a surge_avg column and we felt that including both features would have produced multicolinarity in the model which is never desired. After this dessision we developed a cleaning function in order to clean both the training and testing data the same way.
 ```python
+drop = ['surge_pct']
+
 def clean(df, drop_list):
     df_ = df.drop(drop_list, axis=1)
     cities = list(df_['city'].unique())
