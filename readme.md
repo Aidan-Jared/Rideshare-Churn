@@ -2,7 +2,7 @@
 ### Aidan Jared, Derek Lorenzen, Nathan James
 
 ## EDA
-As any good data scientist we first did some EDA to understand the data structure and what the featers are. Thankfully the [included markdown](group.md) explained the data which speed up the EDA. The data set was made up of 11 features and the point at which and individual churned was if they had not used the rideshare for more than 30 days. With this information we moved onto the data cleaning.
+As any good data scientist we first did some EDA to understand the data structure and what the featers are. Thankfully the [included markdown](group.md) explained the data which speed up the EDA. The data set was made up of 11 features and the point at which and individual churned was if they had not used the rideshare for more than 30 days. We found that there was about 33% `active` users and 66% `not active` With this information we moved onto the data cleaning.
 
 ## Cleaning
 For the cleaning our first dessision was to remove the surge_pct feature because there was also a surge_avg column and we felt that including both features would have produced multicolinarity in the model which is never desired. After this dessision we developed a cleaning function in order to clean both the training and testing data the same way.
@@ -80,10 +80,10 @@ The default valued version resulted in:
 
 ### Confusion Matrix:   
 
- |Positive_a | Negative_a
- ---|---|---
-True_p | 1987 |  705  
-False_p | 985 | 4323  
+| |Positive_a | Negative_a
+| ---:|---|:---
+|True_p | 1987 |  705  
+|False_p | 985 | 4323  
 
 > Accuracy:  0.789  
 > Precision:  0.738  
@@ -102,10 +102,10 @@ To optimize, we iterated through various collections of:
 
 #### Confusion Matrix:    
 
-|Positive_a | Negative_a
----|---|---
-True_p | 1995 |  684  
-False_p | 977 | 4344
+| |Positive_a | Negative_a
+|---|---|---
+|True_p | 1995 |  684  
+|False_p | 977 | 4344
 
 > Accuracy:  0.792  
 Precision:  0.745  
