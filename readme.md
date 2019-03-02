@@ -109,20 +109,20 @@ To optimize, we iterated through various collections of:
 |False_p | 977 | 4344
 
 > Accuracy:  0.792  
-Precision:  0.745  
-Recall:  0.671  
-AUC:  0.768
-Test AUC: 0.738
+>Precision:  0.745  
+>Recall:  0.671  
+>AUC:  0.768
+>Test AUC: 0.738
 
 ![alt text](images/model2.png)
 
 ### Changes between models:
 
 > Accuracy Delta:  0.00362  
-Precision Delta:  0.00656  
-Recall Delta:  0.00269  
-AUC Delta:  0.00343  
-Test AUC Delta: 0.004
+>Precision Delta:  0.00656  
+>Recall Delta:  0.00269  
+>AUC Delta:  0.00343  
+>Test AUC Delta: 0.004
 
 ### Feature Importances   
 
