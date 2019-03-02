@@ -89,6 +89,7 @@ The default valued version resulted in:
 > Precision:  0.738  
 > Recall:  0.669  
 > AUC:  0.764  
+> Test AUC: 0.734
 
 Notable default values:
 * N_Estimators = 100
@@ -111,6 +112,7 @@ To optimize, we iterated through various collections of:
 Precision:  0.745  
 Recall:  0.671  
 AUC:  0.768
+Test AUC: 0.738
 
 ![alt text](images/model2.png)
 
@@ -120,6 +122,7 @@ AUC:  0.768
 Precision Delta:  0.00656  
 Recall Delta:  0.00269  
 AUC Delta:  0.00343  
+Test AUC Delta: 0.004
 
 ### Feature Importances   
 
